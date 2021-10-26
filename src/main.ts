@@ -49,11 +49,11 @@ function useEffect(): [number, () => void] {
 } 
 
 function adder1(a: any, b: any) {
-	a.useState();
+	a.useState(); //Compiler not error.
 }
 
 function adder2(a: unknown, b: unknown) {
-	a.useState();
+	a.useState(); //Compiler error. 
 }
 
 function noReturn(): void {
@@ -63,3 +63,12 @@ function noReturn(): void {
 function noMoreReturn(Message: string): never {
 	throw new Error(Message); 
 }
+
+const isPerson = (person: unknown): person is {name: string} => true; 
+
+function getName(person: unknown) {
+	if(isPerson(person)) {
+		return person.name; 
+	}
+}
+
