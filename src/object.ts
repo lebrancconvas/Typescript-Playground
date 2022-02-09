@@ -45,3 +45,18 @@ function setAngle(angle: Angles) {
 }
 
 setAngle(90);  
+
+interface G {}
+interface C {}
+interface A extends C {
+	a: string
+}
+
+interface B extends C {
+	b: string
+}
+
+const facebookUser: C = { 
+	a: 'Noom',
+	b: 'Nim' 
+}  

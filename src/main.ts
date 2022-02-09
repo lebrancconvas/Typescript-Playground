@@ -72,3 +72,5 @@ function getName(person: unknown) {
 	}
 }
 
+const nullVariable = null;
+const undefinedVariable = undefined;  
